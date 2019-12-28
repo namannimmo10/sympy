@@ -834,7 +834,6 @@ def test_issue_6976():
 
 
 def test_issue_11746():
-    x, y = symbols('x y')
     assert (1/x).subs(x**2, 1) == 1/x
     assert (1/(x**3)).subs(x**2, 1) == x**(-3)
     assert (1/(x**4)).subs(x**2, 1) == 1
