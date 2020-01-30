@@ -6,7 +6,7 @@ from sympy import (symbols, Function, Integer, Matrix, Abs,
     sqrt, root, AlgebraicNumber, Symbol, Dummy, Wild, MatrixSymbol)
 from sympy.combinatorics import Cycle, Permutation
 from sympy.core.compatibility import exec_
-from sympy.geometry import Point, Ellipse
+from sympy.geometry import Point, Ellipse, Circle
 from sympy.printing import srepr
 from sympy.polys import ring, field, ZZ, QQ, lex, grlex, Poly
 from sympy.polys.polyclasses import DMP
@@ -67,9 +67,10 @@ def test_Function():
 
 def test_Geometry():
     sT(Point(0, 0), "Point2D(Integer(0), Integer(0))")
+    sT(Point(1, 2, 3), "Point3D(Integer(1), Integer(2), Integer(3))")
     sT(Ellipse(Point(0, 0), 5, 1),
        "Ellipse(Point2D(Integer(0), Integer(0)), Integer(5), Integer(1))")
-    # TODO more tests
+    sT(Circle(Point(-1, -1), 5), "Circle(Point2D(Integer(-1), Integer(-1)), Integer(5))")
 
 
 def test_Singletons():
